@@ -1,5 +1,31 @@
 textarea {
-  width: 500px;
-  height: 200px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 10em;
   resize: none;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+}
+form input {
+  flex: 1;
+}
+form button {
+  max-width: 8ch;
+  width: 20%;
+  margin-left: 4px;
+}
+
+/* Typography */
+textarea {
+  color: #000;
+}
+input[type="text"], button {
+  color: #222;
+}
+input[type="text"], textarea, button {
+  font-size: 20pt;
+  font-family: "Georgia", serif;
 }

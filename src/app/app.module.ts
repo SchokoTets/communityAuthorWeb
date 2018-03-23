@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { SubmitComponent } from './submit/submit.component';
+import { StoryService } from './story.service';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { SubmitComponent } from './submit/submit.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [StoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

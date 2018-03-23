@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoryService } from '../story.service';
 
 @Component({
   selector: 'app-submit',
@@ -6,16 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./submit.component.css']
 })
 export class SubmitComponent implements OnInit {
-  word: string;
+  word: string = "";
   story: string = "";
-  constructor() { }
+
+  constructor(private storyService: StoryService) { }
 
   ngOnInit() {
   }
 
   submit(): void {
     console.log(this.word);
-    this.story += this.word + " ";
+    this.story += this.storyService.sendWord(this.word);
+    this.word = "";
   }
 
 }

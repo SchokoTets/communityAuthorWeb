@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubmitComponent implements OnInit {
   word: string;
+  story: string = "";
   constructor() { }
 
   ngOnInit() {
@@ -14,6 +15,7 @@ export class SubmitComponent implements OnInit {
 
   submit(): void {
     console.log(this.word);
+    this.story += this.word + " ";
   }
 
 }

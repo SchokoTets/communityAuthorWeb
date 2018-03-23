@@ -1,8 +1,13 @@
+div.container {
+  flex: 1;
+}
+
 textarea {
-  width: 100%;
   box-sizing: border-box;
-  height: 10em;
+  width: 100%;
   resize: none;
+  flex: 1;
+  margin-bottom: 4px;
 }
 
 form {
@@ -11,10 +16,11 @@ form {
 }
 form input {
   flex: 1;
+  min-width: 2ch;
 }
 form button {
   max-width: 8ch;
-  width: 20%;
+  min-width: 5ch;
   margin-left: 4px;
 }
 

@@ -17,7 +17,8 @@ export class SubmitComponent implements OnInit {
 
   submit(): void {
     console.log(this.word);
-    this.story += this.storyService.sendWord(this.word);
+    this.storyService.sendWord(this.word)
+      .subscribe(response => this.story += response);
     this.word = "";
   }
 

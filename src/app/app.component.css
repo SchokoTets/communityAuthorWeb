@@ -11,5 +11,4 @@ div.container app-story {
 
 div.container app-submit {
   min-height: 1em;
-  flex: 1 0;
 }

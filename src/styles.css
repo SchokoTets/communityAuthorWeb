@@ -13,3 +13,15 @@ div.container {
   display: flex;
   flex-direction: column;
 }
+
+/* Typography */
+textarea {
+  color: #000;
+}
+input[type="text"], button {
+  color: #222;
+}
+input[type="text"], textarea, button {
+  font-size: 20pt;
+  font-family: "Georgia", serif;
+}

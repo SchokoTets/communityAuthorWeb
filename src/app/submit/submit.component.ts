@@ -8,22 +8,15 @@ import { StoryService } from '../story.service';
 })
 export class SubmitComponent implements OnInit {
   @Input() word: string = "";
-  story: string = "";
 
   constructor(private storyService: StoryService) { }
 
-  ngOnInit() {
-    this.reload();
-  }
+  ngOnInit() {}
 
   submit(): void {
     if(this.word.trim().length == 0) return;
     console.log(this.word);
-    this.storyService.sendWord(this.word).subscribe(() => { this.reload(); });
+    this.storyService.sendWord(this.word);//.subscribe(() => { this.reload(); });
     this.word = "";
-  }
-
-  reload(): void {
-    this.storyService.getStory().subscribe(response => this.story = response);
   }
 }

@@ -15,15 +15,3 @@ form button {
   min-width: 5ch;
   margin-left: 4px;
 }
-
-/* Typography */
-textarea {
-  color: #000;
-}
-input[type="text"], button {
-  color: #222;
-}
-input[type="text"], textarea, button {
-  font-size: 20pt;
-  font-family: "Georgia", serif;
-}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoryService } from '../story.service';
 
 @Component({
   selector: 'app-story',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./story.component.css']
 })
 export class StoryComponent implements OnInit {
+  story: string = "";
 
-  constructor() { }
+  constructor(private storyService: StoryService) { }
 
   ngOnInit() {
+    this.reload(this.storyService);
+    setInterval(this.reload.bind(this, this.storyService), 1000);
   }
 
+  reload(storyService: StoryService): void {
+    console.log("Reloaded story.");
+    storyService.getStory().subscribe(response => this.story = response);
+  }
 }

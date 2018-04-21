@@ -2,14 +2,6 @@ div.container {
   flex: 1;
 }
 
-textarea {
-  box-sizing: border-box;
-  width: 100%;
-  resize: none;
-  flex: 1;
-  margin-bottom: 4px;
-}
-
 form {
   display: flex;
   justify-content: space-between;

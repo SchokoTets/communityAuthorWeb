@@ -1,7 +1,4 @@
-<div class="container">
-  <textarea readonly>{{story}}</textarea>
-  <form (submit)="submit()">
-    <input name="word" type="text" [(ngModel)]="word" autocomplete="off" required>
-    <button type="submit">submit</button>
-  </form>
-</div>
+<form (submit)="submit()">
+  <input name="word" type="text" [(ngModel)]="word" autocomplete="off" required>
+  <button type="submit">submit</button>
+</form>

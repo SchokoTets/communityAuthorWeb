@@ -6,12 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SubmitComponent } from './submit/submit.component';
 import { StoryService } from './story.service';
+import { StoryComponent } from './story/story.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SubmitComponent
+    SubmitComponent,
+    StoryComponent
   ],
   imports: [
     BrowserModule,

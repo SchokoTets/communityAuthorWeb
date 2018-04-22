@@ -21,7 +21,7 @@ textarea {
 input[type="text"], button {
   color: #222;
 }
-input[type="text"], textarea, button {
+input[type="text"], textarea, button, p {
   font-size: 20pt;
   font-family: "Georgia", serif;
 }

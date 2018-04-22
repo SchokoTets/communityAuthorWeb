@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { SubmitComponent } from './submit/submit.component';
 import { StoryService } from './story.service';
 import { StoryComponent } from './story/story.component';
+import { VoteComponent } from './vote/vote.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SubmitComponent,
-    StoryComponent
+    StoryComponent,
+    VoteComponent
   ],
   imports: [
     BrowserModule,

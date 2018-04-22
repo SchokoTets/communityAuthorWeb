@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-
+import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable()
 export class StoryService {
@@ -13,14 +13,15 @@ export class StoryService {
     return str.replace(/\\([\s\S])|(")/g,"\\$1$2");
   }
 
-  getStory(): Observable<string> {
-    return this.http.get(this.ip + "/story", { responseType: 'text'});
+  getStory(): string {
+    let response;
+    this.http.get(this.ip + "/story", { responseType: 'text'}).subscribe(sresponse => response = sresponse, error => console.error("Connection not possible."));
+    return response;
   }
 
   sendWord(word: string): void {
     const options = { headers: new HttpHeaders({ 'Content-Type':  'application/json' }), responseType: 'text' as 'text' };
-    console.log("Trying to send: "+ word);
     const body = {word: this.escapeDQ(word), uuid: String(Math.floor(Math.random() * 1000))};
-    this.http.post(this.ip + "/submit", JSON.stringify(body), options ).subscribe(response => console.log("Server responded: " + response));
+    this.http.post(this.ip + "/submit", JSON.stringify(body), options ).subscribe(response => console.log("Server responded: " + response), error => console.error("Connection not possible."));
   }
 }

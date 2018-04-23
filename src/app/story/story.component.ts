@@ -17,6 +17,6 @@ export class StoryComponent implements OnInit {
   }
 
   reload(storyService: StoryService): void {
-    this.story = storyService.getStory();
+    storyService.getStory().subscribe(response => this.story = response);
   }
 }

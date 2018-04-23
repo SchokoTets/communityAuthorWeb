@@ -13,10 +13,8 @@ export class StoryService {
     return str.replace(/\\([\s\S])|(")/g,"\\$1$2");
   }
 
-  getStory(): string {
-    let response;
-    this.http.get(this.ip + "/story", { responseType: 'text'}).subscribe(sresponse => response = sresponse, error => console.error("Connection not possible."));
-    return response;
+  getStory(): Observable<string> {
+    return this.http.get(this.ip + "/story", { responseType: 'text'});
   }
 
   sendWord(word: string): void {

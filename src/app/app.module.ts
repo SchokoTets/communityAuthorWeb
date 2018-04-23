@@ -1,13 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { SubmitComponent } from './submit/submit.component';
 import { StoryService } from './story.service';
 import { StoryComponent } from './story/story.component';
 import { VoteComponent } from './vote/vote.component';
+import { HttpErrorInterceptor } from './http-error.interceptor';
 
 
 @NgModule({
@@ -22,7 +23,12 @@ import { VoteComponent } from './vote/vote.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [StoryService],
+  providers: [
+    StoryService
+    { provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi:true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

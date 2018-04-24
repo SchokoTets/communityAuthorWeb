@@ -24,7 +24,7 @@ import { HttpErrorInterceptor } from './http-error.interceptor';
     HttpClientModule
   ],
   providers: [
-    StoryService
+    StoryService,
     { provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,
       multi:true }

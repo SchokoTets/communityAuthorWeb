@@ -17,9 +17,13 @@ export class StoryService {
     return this.http.get(this.ip + "/story", { responseType: 'text'});
   }
 
+  getQueue(): Observable<object> {
+    return this.http.get(this.ip + "/queue", { responseType: 'json'});
+  }
+
   sendWord(word: string): void {
     const options = { headers: new HttpHeaders({ 'Content-Type':  'application/json' }), responseType: 'text' as 'text' };
     const body = {word: this.escapeDQ(word), uuid: String(Math.floor(Math.random() * 1000))};
-    this.http.post(this.ip + "/submit", JSON.stringify(body), options ).subscribe(response => console.log("Server responded: " + response), error => console.error("Connection not possible."));
+    this.http.post(this.ip + "/submit", JSON.stringify(body), options ).subscribe(/*response => console.log("Server responded to word: " + response)*/);
   }
 }

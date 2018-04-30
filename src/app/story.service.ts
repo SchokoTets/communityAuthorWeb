@@ -13,11 +13,15 @@ export class StoryService {
     return str.replace(/\\([\s\S])|(")/g,"\\$1$2");
   }
 
+  getStatus(): Observable<any> {
+    return this.http.get(this.ip + "/status", { responseType: 'json'});
+  }
+
   getStory(): Observable<string> {
     return this.http.get(this.ip + "/story", { responseType: 'text'});
   }
 
-  getQueue(): Observable<object> {
+  getQueue(): Observable<any> {
     return this.http.get(this.ip + "/queue", { responseType: 'json'});
   }
 

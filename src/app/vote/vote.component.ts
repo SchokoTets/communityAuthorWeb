@@ -9,16 +9,12 @@ import { StoryService } from '../story.service';
 export class VoteComponent implements OnInit {
   votelist: { [id: string] : number; } = {};
 
+  constructor(private storyService: StoryService) {}
 
-  // = {"word1": 2, "word2": 1, "word3": 7};
-  constructor(private storyService: StoryService) {
-    //this.votelist['word1'] = 3;
-    //this.votelist['word3'] = 13;
-  }
   getKeys(obj: object) {
     return Object.keys(obj);
   }
-  //ngOnInit(){}
+  
   ngOnInit() {
     this.reload(this.storyService);
     setInterval(this.reload.bind(this, this.storyService), 2000);

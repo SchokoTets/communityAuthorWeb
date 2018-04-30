@@ -1,6 +1,6 @@
 <div>
   <h1>#{{title}}</h1>
   <app-story></app-story>
-  <app-vote></app-vote>
-  <app-submit></app-submit>
+  <app-vote *ngIf="voting"></app-vote>
+  <app-submit *ngIf="!voting"></app-submit>
 </div>

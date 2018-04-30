@@ -11,8 +11,10 @@ div {
 }
 
 app-story {
-  flex: 1 0 auto;
+  display: flex;
+  flex: 1 1 auto;
   margin-bottom: 4px;
+  height: fit-content;
 }
 
 app-submit, app-vote {

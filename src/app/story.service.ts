@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class StoryService {

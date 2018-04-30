@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StoryService } from './story.service';
+import { StatusService } from './status.service';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +9,12 @@ import { StoryService } from './story.service';
 })
 export class AppComponent implements OnInit {
   title = 'communityAuthorWeb';
-  voting: boolean = false;
 
-  constructor(private storyService: StoryService) {}
+  constructor(private storyService: StoryService, private statusService: StatusService) {}
 
-  ngOnInit() {
-    this.reload(this.storyService);
-    setInterval(this.reload.bind(this, this.storyService), 2000);
-  }
+  ngOnInit(){}
 
-  reload(storyService: StoryService): void {
-    storyService.getStatus().subscribe(response => this.voting = response.voting);
+  statusDisplay() {
+    return (this.statusService.voting?"voting":"submitting") + " " + Math.round(this.statusService.countdown/1000) + " s";
   }
 }

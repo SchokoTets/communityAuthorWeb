@@ -6,6 +6,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SubmitComponent } from './submit/submit.component';
 import { StoryService } from './story.service';
+import { StatusService } from './status.service';
 import { StoryComponent } from './story/story.component';
 import { VoteComponent } from './vote/vote.component';
 import { HttpErrorInterceptor } from './http-error.interceptor';
@@ -25,6 +26,7 @@ import { HttpErrorInterceptor } from './http-error.interceptor';
   ],
   providers: [
     StoryService,
+    StatusService,
     { provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,
       multi:true }

@@ -1,6 +1,9 @@
-<div>
-  <h1>#{{title}}</h1>
+<div id="container">
+  <div id="next">
+    <h1>#{{title}}</h1>
+    <p>{{statusDisplay()}}</p>
+  </div>
   <app-story></app-story>
-  <app-vote *ngIf="voting"></app-vote>
-  <app-submit *ngIf="!voting"></app-submit>
+  <app-vote *ngIf="statusService.voting"></app-vote>
+  <app-submit *ngIf="!statusService.voting"></app-submit>
 </div>

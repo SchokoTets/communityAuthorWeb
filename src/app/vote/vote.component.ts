@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { StoryService } from '../story.service';
-import { AppComponent } from '../app.component';
+import { StatusService } from '../status.service';
 
 @Component({
   selector: 'app-vote',
@@ -10,20 +10,20 @@ import { AppComponent } from '../app.component';
 export class VoteComponent implements OnInit {
   votelist: { [id: string] : number; } = {};
 
-  constructor(private storyService: StoryService, private app: AppComponent) {}
+  constructor(private storyService: StoryService, private statusService: StatusService) {}
 
   getKeys(obj: object): string[] {
     return Object.keys(obj) as string[];
   }
 
   ngOnInit() {
-    this.reload(this.storyService);
-    setInterval(this.reload.bind(this, this.storyService), 2000);
+    this.reload();
+    setInterval(this.reload.bind(this), 2000);
   }
 
-  reload(storyService: StoryService): void {
-    if(!this.app.voting) return;
-    storyService.getQueue().subscribe(response => this.votelist = response as { [id: string] : number; });
+  reload(): void {
+    if(!this.statusService.voting) return;
+    this.storyService.getQueue().subscribe(response => this.votelist = response as { [id: string] : number; });
   }
 
   voteFor(vote: string) {

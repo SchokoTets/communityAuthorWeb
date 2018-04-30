@@ -4,7 +4,14 @@ h1 {
   font-size: 20pt;
 }
 
-div {
+div#next {
+    display: flex;
+    flex-direction:  row;
+    align-items: baseline;
+    justify-content:  space-between;
+}
+
+div#container {
   height: 100%;
   display: flex;
   flex-direction: column;

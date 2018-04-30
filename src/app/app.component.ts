@@ -19,6 +19,5 @@ export class AppComponent implements OnInit {
 
   reload(storyService: StoryService): void {
     storyService.getStatus().subscribe(response => this.voting = response.voting);
-    console.log(this.voting);
   }
 }

@@ -10,7 +10,7 @@ import { StatusService } from './status.service';
 export class AppComponent implements OnInit {
   title = 'communityAuthorWeb';
 
-  constructor(private storyService: StoryService, private statusService: StatusService) {}
+  constructor(private storyService: StoryService, public statusService: StatusService) {}
 
   ngOnInit(){}
 

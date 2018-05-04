@@ -11,6 +11,18 @@ div#next {
     justify-content:  space-between;
 }
 
+@media only screen and (max-width: 600px) {
+  div#next {
+    flex-direction: column;
+  }
+  div#next h1 {
+    margin-bottom: 0;
+  }
+  div#next p {
+    margin-top: 0;
+  }
+}
+
 div#container {
   height: 100%;
   display: flex;

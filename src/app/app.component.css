@@ -12,15 +12,30 @@ div#next {
   margin-bottom: 15px;
 }
 
-@media only screen and (max-width: 600px) {
+div#next p {
+  margin: .8em 0;
+}
+@media (max-height: 540px) {
+  div#next p {
+    margin: .5em 0;
+  }
+}
+
+@media (max-width: 600px) {
   div#next {
     flex-direction: column;
   }
-  div#next h1 {
-    margin-bottom: 0;
-  }
   div#next p {
+    margin: .3em 0;
+  }
+  div#next p:nth-child(1) {
+    width: 100%;
+    text-align: center;
+  }
+  div#next p:nth-child(2) {
     margin-top: 0;
+    width: 100%;
+    text-align: center;
   }
 }
 

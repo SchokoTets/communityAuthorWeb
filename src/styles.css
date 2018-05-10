@@ -14,15 +14,17 @@ div.container {
   flex-direction: column;
 }
 
-/* Typography */
 textarea {
   color: #000;
 }
 input[type="text"]{
   color: #222;
 }
-input[type="text"], textarea {
+input[type="text"]{
   background-color: #fff;
+}
+textarea {
+  background-color: #fcfcfc;
 }
 input[type="text"], textarea, button {
   border: 1px solid #215387;

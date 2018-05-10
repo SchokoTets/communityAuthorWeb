@@ -9,6 +9,7 @@ import { StatusService } from '../status.service';
 })
 export class VoteComponent implements OnInit {
   votelist: { [id: string] : number; } = {};
+  selected: string = "";
 
   constructor(private storyService: StoryService, private statusService: StatusService) {}
 
@@ -27,6 +28,7 @@ export class VoteComponent implements OnInit {
   }
 
   voteFor(vote: string) {
+    this.selected = vote;
     let keys = this.getKeys(this.votelist);
     for(let i = 0; i < keys.length; i++) {
       if(keys[i] == vote) this.storyService.voteFor(i);

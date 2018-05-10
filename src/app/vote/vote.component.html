@@ -1,5 +1,6 @@
 <ul class="options">
-  <li *ngFor="let vote of getKeys(votelist)" (click)="voteFor(vote)">
+  <li *ngFor="let vote of getKeys(votelist)" (click)="voteFor(vote)"
+    [class.selected]="vote === selected">
     <p>{{vote}} ({{votelist[vote]}})</p>
   </li>
 </ul>

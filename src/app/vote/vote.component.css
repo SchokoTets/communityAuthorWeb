@@ -1,26 +1,12 @@
-/* optionsComponent's private CSS styles */
-.selected {
-  background-color: #CFD8DC !important;
-  color: white;
-}
 .options {
   margin: 0 -4px 4px 0;
   display: flex;
   list-style-type: none;
   padding: 0;
 }
-.options li {
-  flex: 1;
-  cursor: pointer;
-  position: relative;
-  left: 0;
-  background-color: #EEE;
-  margin-right: 4px;
-  padding: .3em 0;
-  /*border-radius: 4px;*/
-}
 .options li p {
   margin: 0;
+  color: #215387;
   text-align: center;
   -webkit-touch-callout:none;
   -webkit-user-select:none;
@@ -30,11 +16,19 @@
   user-select:none;
   -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
-.options li.selected:hover {
-  background-color: #BBD8DC !important;
-  color: white;
+.options li {
+  flex: 1;
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #dae3ec;
+  margin-right: 4px;
+  padding: .3em 0;
+  /*border-radius: 4px;*/
+}
+.options li.selected {
+  background-color: #b5c7da;
 }
 .options li:hover {
-  color: #607D8B;
-  background-color: #DDD;
+  background-color: #c7d5e3;
 }

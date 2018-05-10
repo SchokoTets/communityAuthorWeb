@@ -15,6 +15,12 @@ export class AppComponent implements OnInit {
   ngOnInit(){}
 
   statusDisplay() {
-    return (this.statusService.voting?"voting":"submitting") + " " + Math.round(this.statusService.countdown/1000) + " s";
+    let text = (this.statusService.voting?"voting":"submitting") + " ";
+    if(this.statusService.waiting.done) {
+      text += (Math.round(this.statusService.waiting.countdown/100)/10).toFixed(1) + " s";
+    } else {
+      text += "(" + this.statusService.waiting.value + "/" + this.statusService.waiting.required + ")";
+    }
+    return text;
   }
 }

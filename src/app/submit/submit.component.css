@@ -9,12 +9,17 @@ form {
 form input {
   flex: 1;
   min-width: 2ch;
+
+  color: #222;
+  background-color: #fff;
+  border: 1px solid #215387;
 }
 form button {
   max-width: 8ch;
   min-width: 5ch;
   margin-left: 4px;
-  
+
   color: #215387;
   background-color: #dae3ec;
+  border: 1px solid #215387;
 }

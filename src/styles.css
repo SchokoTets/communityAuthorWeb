@@ -14,21 +14,7 @@ div.container {
   flex-direction: column;
 }
 
-textarea {
-  color: #000;
-}
-input[type="text"]{
-  color: #222;
-}
-input[type="text"]{
-  background-color: #fff;
-}
-textarea {
-  background-color: #fcfcfc;
-}
-input[type="text"], textarea, button {
-  border: 1px solid #215387;
-}
+
 * {
   font-size: 20pt;
   font-family: "Georgia", serif;

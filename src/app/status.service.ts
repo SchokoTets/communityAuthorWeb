@@ -4,7 +4,7 @@ import { StoryService } from './story.service';
 @Injectable()
 export class StatusService {
   voting: boolean = false;
-  countdown: number = 20000;
+  waiting: any = { done: false, countdown: 20000};
 
   constructor(private storyService: StoryService) {
     this.reload(this.storyService);
@@ -14,7 +14,7 @@ export class StatusService {
   reload(storyService: StoryService) {
     storyService.getStatus().subscribe(response => {
       this.voting = response.voting;
-      this.countdown = response.countdown;
+      this.waiting = response.waiting;
     })
   }
 
